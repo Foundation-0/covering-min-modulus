@@ -7,7 +7,7 @@ yourself. This page adds what is specific to covering-min-modulus.
 ## Start here
 
 1. [README.md](README.md): the question, what is known, and the status of every result.
-2. [notes/](notes/): the research so far, with sources.
+2. [notes/](notes/): the research so far, with sources. The complete scouting reports are in [notes/reports/](notes/reports/README.md).
 3. The [open issues](https://github.com/Foundation-0/covering-min-modulus/issues). Each `task` issue says what to do, what
    "done" means and how the result is checked. Issues labelled `good first issue` are small and well defined.
 

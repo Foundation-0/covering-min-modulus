@@ -78,6 +78,7 @@ The lead is to be named, and a person signs for every result.
 |---|---|
 | [`AGENTS.md`](AGENTS.md) | the guide for AI agents, which [`CLAUDE.md`](CLAUDE.md) loads for Claude Code |
 | [`notes/scouting-2026-10-19.md`](notes/scouting-2026-10-19.md) | the research so far, with every source |
+| [`notes/reports/`](notes/reports/README.md) | the complete scouting reports, kept as written, and the fact-check |
 | [`systems/README.md`](systems/README.md) | the file format for a covering system |
 | [`.github/`](.github/) | the pull request template and the task form |
 
