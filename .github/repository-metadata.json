@@ -1,0 +1,11 @@
+{
+  "description": "Re-checking the record covering system (minimum modulus 42) and searching for one with minimum modulus 43 (Erdős problem 2).",
+  "topics": [
+    "foundation0",
+    "number-theory",
+    "covering-systems",
+    "erdos-problems",
+    "combinatorics",
+    "verification"
+  ]
+}
