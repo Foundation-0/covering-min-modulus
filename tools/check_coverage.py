@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Exact covering check by a full residue-period bitmap, with an explicit cap."""
 import argparse,math,re,sys
+from pathlib import Path
 
 def check(path,cap=1000000):
  pairs=[];minimum=None
- for line in open(path):
+ for line in Path(path).read_text().splitlines():
   line=line.strip()
   if not line:continue
   if line.startswith('#'):
