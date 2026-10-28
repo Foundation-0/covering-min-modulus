@@ -5,13 +5,13 @@ def replay(system,checkers,timeout=30):
     if len(checkers)!=2 or pathlib.Path(checkers[0]).resolve()==pathlib.Path(checkers[1]).resolve():raise ValueError('two distinct checker paths required')
     result=dict(input_sha256=hashlib.sha256(pathlib.Path(system).read_bytes()).hexdigest(),checks=[])
     for checker in checkers:
-        cmd=[sys.executable,str(pathlib.Path(checker).resolve()),str(pathlib.Path(system).resolve())];start=time.monotonic()
+        cmd=[sys.executable,str(pathlib.Path(checker).resolve()),str(pathlib.Path(system).resolve())];recorded_cmd=['python3',pathlib.Path(checker).name,pathlib.Path(system).name];start=time.monotonic()
         try:
             p=subprocess.run(cmd,capture_output=True,text=True,timeout=timeout)
             try: verdict=ast.literal_eval(p.stdout.strip())
             except (ValueError,SyntaxError):verdict=None
-            row=dict(command=cmd,returncode=p.returncode,stdout=p.stdout,stderr=p.stderr,verdict=verdict,seconds=time.monotonic()-start)
-        except subprocess.TimeoutExpired:row=dict(command=cmd,status='timeout',seconds=time.monotonic()-start)
+            row=dict(command=recorded_cmd,returncode=p.returncode,stdout=p.stdout,stderr=p.stderr,verdict=verdict,seconds=time.monotonic()-start)
+        except subprocess.TimeoutExpired:row=dict(command=recorded_cmd,status='timeout',seconds=time.monotonic()-start)
         row['checker_sha256']=hashlib.sha256(pathlib.Path(checker).read_bytes()).hexdigest();result['checks'].append(row)
     result['status']='both_accept' if all(r.get('returncode')==0 and isinstance(r.get('verdict'),dict) and r['verdict'].get('covered') is True for r in result['checks']) else 'unresolved'
     return result
