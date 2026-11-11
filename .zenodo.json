@@ -1,0 +1,27 @@
+{
+    "creators": [
+        {
+            "name": "Arifuddin, Ahraz"
+        }
+    ],
+    "title": "covering-min-modulus",
+    "description": "<p>This repository re-checks the record covering system with minimum modulus 42, from Tyler Owens's 2014 master's thesis, and searches for a system with minimum modulus 43.</p><p>Status: not started. No independent check or new system from this project is present yet.</p><p>Directed by Ahraz Arifuddin</p><p>Researched and verified by different model families across Gemini, Claude, Grok, OpenAI, and Muse</p>",
+    "upload_type": "software",
+    "license": "Apache-2.0",
+    "keywords": [
+        "combinatorics",
+        "covering-systems",
+        "erdos-problems",
+        "foundation0",
+        "number-theory",
+        "verification"
+    ],
+    "related_identifiers": [
+        {
+            "identifier": "https://github.com/Foundation-0/covering-min-modulus",
+            "relation": "isSupplementTo",
+            "scheme": "url",
+            "resource_type": "software"
+        }
+    ]
+}
